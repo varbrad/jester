@@ -1,6 +1,7 @@
 {
-	"name": "jester",
+  "name": "jester",
 	"displayName": "jester",
+  "publisher": "varbrad",
 	"description": "Jest task runner extension for VS Code",
 	"version": "0.0.1",
 	"engines": {
@@ -24,20 +25,22 @@
 	"scripts": {
 		"compile": "tsc -p ./",
 		"lint": "eslint src --ext .ts",
-		"postinstall": "node ./node_modules/vscode/bin/install",
-		"test": "yarn run compile && node ./node_modules/vscode/bin/test",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "jest",
 		"vscode:prepublish": "yarn run compile",
 		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
-		"@types/mocha": "^2.2.42",
+		"@types/jest": "^24.0.15",
 		"@types/node": "^10.12.21",
 		"@typescript-eslint/eslint-plugin": "^1.10.2",
 		"@typescript-eslint/parser": "^1.10.2",
 		"eslint": "^5.16.0",
 		"eslint-config-prettier": "^5.0.0",
 		"eslint-plugin-prettier": "^3.1.0",
+		"jest": "^24.8.0",
 		"prettier": "^1.18.2",
+		"ts-jest": "^24.0.2",
 		"typescript": "^3.3.1",
 		"vscode": "^1.1.28"
 	}
