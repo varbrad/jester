@@ -14,23 +14,31 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
-		}]
+		"commands": [
+			{
+				"command": "extension.helloWorld",
+				"title": "Hello World"
+			}
+		]
 	},
 	"scripts": {
 		"compile": "tsc -p ./",
+		"lint": "eslint src --ext .ts",
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "yarn run compile && node ./node_modules/vscode/bin/test",
 		"vscode:prepublish": "yarn run compile",
 		"watch": "tsc -watch -p ./"
 	},
 	"devDependencies": {
-		"typescript": "^3.3.1",
-		"vscode": "^1.1.28",
-		"tslint": "^5.12.1",
+		"@types/mocha": "^2.2.42",
 		"@types/node": "^10.12.21",
-		"@types/mocha": "^2.2.42"
+		"@typescript-eslint/eslint-plugin": "^1.10.2",
+		"@typescript-eslint/parser": "^1.10.2",
+		"eslint": "^5.16.0",
+		"eslint-config-prettier": "^5.0.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"prettier": "^1.18.2",
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28"
 	}
 }
